@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+// import Dark from "./dark";
 
 function App() {
+  const [dark, setDark] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".nav");
@@ -19,47 +20,63 @@ function App() {
     };
   }, []);
 
+  const darkMode = () => {
+    setDark(!dark);
+    if (!dark) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  };
+
   return (
     <>
       <header id="home">
-        {/* <div className="relative h-full w-full bg-slate-950">
-          <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
-          <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
-        </div> */}
         <nav className="nav">
           {/* <button className="nav-toggle" aria-label="Abrir menú">
             <i className="bi bi-list"></i>
           </button> */}
-          
-            <ul className="nav-links">
-          <li className="imag">
-          <img
-              className="imagen-perfil"
-              src="img/j2.png"
-              alt="logo de marca"
-            />
-          </li>
-              <li>
-                <a className="nav-link" href="#home">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a className="nav-link" href="#projects">
-                  Portafolio
-                </a>
-              </li>
-              <li>
-                <a className="nav-link" href="#skills">
-                  Habilidades
-                </a>
-              </li>
-            </ul>
-            <label htmlFor=""><i className="fa-solid fa-moon"></i></label>
-          <button className="contact-button">
-            <a href="#contact">Contacto</a>
-          </button>
-          {/* Los div me joden mucho con el estilo */}
+          <ul className="nav-links">
+            <li className="img">
+              <img
+                className="imagen-perfil"
+                src="img/j2.png"
+                alt="logo de marca"
+              />
+            </li>
+            <li>
+              <a className="nav-link" href="#home">
+                Home
+              </a>
+            </li>
+            <li>
+              <a className="nav-link" href="#projects">
+                Portafolio
+              </a>
+            </li>
+            <li>
+              <a className="nav-link" href="#skills">
+                Habilidades
+              </a>
+            </li>
+            <li>
+              <a className="nav-link" href="#contact">
+                Contacto
+              </a>
+            </li>
+          </ul>
+          {/* <label htmlFor="toggle" id="label_toggle">
+            <i className="fa-solid fa-moon"></i>
+          </label>
+          <input type="checkbox" id="toggle" /> */}
+          <div className="dynamic">
+            <label onClick={darkMode}>
+              <i className={dark ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
+            </label>
+            {/* <button className="contact-button">
+              <a href="#contact">Contacto</a>
+            </button> */}
+          </div>
         </nav>
       </header>
       <main className="main">
@@ -90,8 +107,11 @@ function App() {
               </a>
             </div>
           </div>
+          <div className="row">
+            <span></span>
+            <span></span>
+          </div>
         </section>
-
         <section id="projects">
           <h1 className="section">Portafolio</h1>
           <ul className="projects">
