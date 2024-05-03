@@ -15,7 +15,7 @@ const ScrollListener = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+ 
   return null; // No necesitamos renderizar nada en este componente
 };
 

@@ -3,10 +3,11 @@ import "./App.css";
 // import Dark from "./dark";
 
 function App() {
-  const [dark, setDark] = useState(() => {
-    const modeDark = window.localStorage.getItem('mode')
-    return modeDark ? JSON.parse(modeDark) : false
-  });
+  const [dark, setDark] = useState(false);
+  // const [dark, setDark] = useState(() => {
+  //   const modeDark = window.localStorage.getItem('mode')
+  //   return modeDark ? JSON.parse(modeDark) : false
+  // });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,20 +24,38 @@ function App() {
     };
   }, []);
 
+  // useEffect(() => {// Aquí guardamos el estado actualizado en el localStorage
+  //   window.localStorage.setItem('mode', JSON.stringify(dark));
+  // }, [dark]); // Dependencia añadida para que este efecto se ejecute solo cuando 'dark' cambie
+
   const darkMode = () => {
     setDark(!dark);
-    if (!dark) {
+  };
+
+  useEffect(() => {
+    if (dark) {
       document.body.classList.add("dark-mode");
     } else {
       document.body.classList.remove("dark-mode");
     }
-  };
-  
-  window.localStorage.setItem('mode', JSON.stringify(dark))
+  }, [dark]);
+
+  // useEffect(() => {
+  //   // Ajustar la posición del switch cuando cambie el modo oscuro almacenado en el localStorage
+  //   const switchElement = document.querySelector('.input-check') as HTMLInputElement; // Casting al tipo HTMLInputElement
+  //   if (switchElement) {
+  //     switchElement.checked = dark;
+  //   }
+  // }, [dark]);
 
   return (
     <>
       <header id="home">
+        <div className="star-field">
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+        </div>
         <nav className="nav">
           {/* <button className="nav-toggle" aria-label="Abrir menú">
             <i className="bi bi-list"></i>
@@ -70,16 +89,20 @@ function App() {
               </a>
             </li>
           </ul>
-          {/* <label htmlFor="toggle" id="label_toggle">
-            <i className="fa-solid fa-moon"></i>
-          </label>
-          <input type="checkbox" id="toggle" /> */}
           <div className="dynamic">
-            <input type="checkbox" className="input-check" id="darkmode-toggle"/>
-            <label htmlFor="darkmode-toggle" className="label-check" onClick={darkMode}>
-              <i className="fa-solid fa-sun" ></i>
-              <i className="fa-solid fa-moon" ></i>
-              {/* <i className={dark ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i> */}
+            <input
+              type="checkbox"
+              className="input-check"
+              id="darkmode-toggle"
+            />
+            <label
+              htmlFor="darkmode-toggle"
+              className="label-check"
+              onClick={darkMode}
+            >
+              {/* <i className="fa-solid fa-sun"></i>
+              <i className="fa-solid fa-moon" ></i> */}
+              <i className={dark ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
             </label>
             {/* <button className="contact-button">
               <a href="#contact">Contacto</a>
@@ -439,8 +462,7 @@ function App() {
                 viewBox="0 0 15 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-              >
-              </svg>
+              ></svg>
             </div>
           </div>
         </section>
