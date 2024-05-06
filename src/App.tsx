@@ -104,11 +104,6 @@ function App() {
             </li>
           </ul>
           <div className="dynamic">
-            {/* <input
-              type="checkbox"
-              className="input-check"
-              id="darkmode-toggle"
-            /> */}
             <label id="theme-toggle-button">
               <input type="checkbox" id="toggle" onClick={darkMode} />
               <svg
@@ -320,10 +315,12 @@ function App() {
       <main className="main">
         <section className="home">
           <div className="titulo">
-            <h1 className="text-animation">Javier Hernán Castro<span></span></h1>
+            <h1>Javier Hernán Castro</h1>
+            <h3 className="text-animation">
+              Soy <span></span>
+            </h3>
             <p>
-              Soy Desarrollador software Full Stack, los invito a ver mis
-              proyectos, habilidades y logros destacados.
+              los invito a ver mis proyectos, habilidades y logros destacados.
             </p>
             <div className="links-perfil">
               <p className="github">
