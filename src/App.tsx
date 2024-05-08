@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-// import Dark from "./dark";
+import NavComponent from "./NavComponent";
 
 function App() {
   const [dark, setDark] = useState(false);
-  // const [dark, setDark] = useState(() => {
-  //   const modeDark = window.localStorage.getItem('mode')
-  //   return modeDark ? JSON.parse(modeDark) : false
-  // });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +20,6 @@ function App() {
     };
   }, []);
 
-  // useEffect(() => {// Aquí guardamos el estado actualizado en el localStorage
-  //   window.localStorage.setItem('mode', JSON.stringify(dark));
-  // }, [dark]); // Dependencia añadida para que este efecto se ejecute solo cuando 'dark' cambie
-
   const darkMode = () => {
     setDark(!dark);
   };
@@ -39,14 +31,6 @@ function App() {
       document.body.classList.remove("dark-mode");
     }
   }, [dark]);
-
-  // useEffect(() => {
-  //   // Ajustar la posición del switch cuando cambie el modo oscuro almacenado en el localStorage
-  //   const switchElement = document.querySelector('.input-check') as HTMLInputElement; // Casting al tipo HTMLInputElement
-  //   if (switchElement) {
-  //     switchElement.checked = dark;
-  //   }
-  // }, [dark]);
 
   return (
     <>
@@ -71,9 +55,7 @@ function App() {
           <div className="particle"></div>
         </div>
         <nav className="nav">
-          {/* <button className="nav-toggle" aria-label="Abrir menú">
-            <i className="bi bi-list"></i>
-          </button> */}
+          <NavComponent/>
           <ul className="nav-links">
             <li className="img">
               <img
@@ -295,20 +277,6 @@ function App() {
                 </g>
               </svg>
             </label>
-
-            {/*
-            <label
-              htmlFor="darkmode-toggle"
-              className="label-check"
-              onClick={darkMode}
-            >
-              {/* <i className="fa-solid fa-sun"></i>
-              <i className="fa-solid fa-moon" ></i> 
-              <i className={dark ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
-            </label>
-             <button className="contact-button">
-              <a href="#contact">Contacto</a>
-            </button> */}
           </div>
         </nav>
       </header>
@@ -342,10 +310,12 @@ function App() {
               </a>
             </div>
           </div>
+          {/* <NavComponent/> */}
           <div className="row">
             <span></span>
             <span></span>
           </div>
+
         </section>
         <section id="projects">
           <h1 className="section">Portafolio</h1>
@@ -494,10 +464,10 @@ function App() {
         </section>
 
         <section id="skills" className="skills">
-          <h1 className="section">Habilidades</h1>
+          <h1 className="no-responsive section">Habilidades</h1>
           <div className="format">
             <article className="skills-text">
-              {/* <h1 className="responsive section">Habilidades</h1> */}
+              <h1 className="responsive section">Habilidades</h1>
               {/* <h1 className="section">Habilidades</h1> */}
               <ul>
                 <li>
@@ -525,7 +495,6 @@ function App() {
               </ul>
             </article>
             <article className="habilidades">
-              {/* <h1 className="no-responsive section">Habilidades</h1> */}
               <ul className="skills-list">
                 <li>
                   <picture className="icon">
@@ -636,7 +605,7 @@ function App() {
                 </button>
               </p>
             </form>
-            <div className="referenced">
+            <article className="referenced">
               <h4>DIRECCIÓN:</h4>
               <p>Mendoza, Argentina</p>
               <br />
@@ -667,13 +636,12 @@ function App() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               ></svg>
-            </div>
+            </article>
           </div>
         </section>
         <footer>
           <p>&copy; Web desarrollada por Javier Castro</p>
         </footer>
-        <script src="menu.js"></script>
       </main>
     </>
   );
