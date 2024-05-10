@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import NavComponent from "./NavComponent";
+import "./NavComponent.css";
+
+// import NavComponent from "./NavComponent";
 
 function App() {
   const [dark, setDark] = useState(false);
@@ -32,6 +34,13 @@ function App() {
     }
   }, [dark]);
 
+  //Hola
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const handleToggle = () => {
+    setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+  };
+
   return (
     <>
       <header id="home">
@@ -55,8 +64,15 @@ function App() {
           <div className="particle"></div>
         </div>
         <nav className="nav">
-          <NavComponent/>
-          <ul className="nav-links">
+          {/* <NavComponent/> */}
+          <button
+            className="nav-toggle"
+            aria-label={menuVisible ? "Cerrar menú" : "Abrir menú"}
+            onClick={handleToggle}
+          >
+            <i className="bi bi-list"></i>
+          </button>
+          <ul className={`nav-links ${menuVisible ? "nav-menu_visible" : " "}`}>
             <li className="img">
               <img
                 className="imagen-perfil"
@@ -315,11 +331,34 @@ function App() {
             <span></span>
             <span></span>
           </div>
-
         </section>
         <section id="projects">
           <h1 className="section">Portafolio</h1>
           <ul className="projects">
+            <li className="card">
+              <div className="description">
+                <h2>Recipify</h2>
+                <p>
+                  En este proyecto echo en equipo basado en next.js, es una web donde te registras y buscas recetas de cocina también podes publicar tus
+                  recetas en la web
+                </p>
+              </div>
+              <picture className="picture">
+                <img src="img/recipify.png" alt="proyecto crud" />
+                <ul>
+                  <a
+                    href="https://github.com/javierh-castro/User-Register"
+                    target="_blank"
+                    className="bi bi-github"
+                  ></a>
+                  <a
+                    href="https://github.com/javierh-castro/User-Register"
+                    target="_blank"
+                    className="bi bi-link"
+                  ></a>
+                </ul>
+              </picture>
+            </li>
             <li className="card">
               <div className="description">
                 <h2>Un e-commerce web</h2>
@@ -430,30 +469,6 @@ function App() {
                   ></a>
                   <a
                     href="https://github.com/javierh-castro/CRUD-2"
-                    target="_blank"
-                    className="bi bi-link"
-                  ></a>
-                </ul>
-              </picture>
-            </li>
-            <li className="card">
-              <div className="description">
-                <h2>Registro de Cuenta</h2>
-                <p>
-                  En este ejemplo vemos como podes crearte una cuenta o acceder
-                  directo a una ya creada.
-                </p>
-              </div>
-              <picture className="picture">
-                <img src="img/login.png" alt="proyecto crud" />
-                <ul>
-                  <a
-                    href="https://github.com/javierh-castro/User-Register"
-                    target="_blank"
-                    className="bi bi-github"
-                  ></a>
-                  <a
-                    href="https://github.com/javierh-castro/User-Register"
                     target="_blank"
                     className="bi bi-link"
                   ></a>

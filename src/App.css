@@ -6,7 +6,7 @@
   --bg-color: #f0ead2;
   --main-color: #f77f00;
   --background-color: #f77f00;
-  --background2-color: #ffe9a6;
+  --background2-color: rgba(255, 216, 107, 0.479);
 }
 
 * {
@@ -566,7 +566,6 @@ body {
 .card ul a {
   margin: 5px;
   padding: 4px 13px;
-  /* background: var(--background-color); */
   border: 2px solid var(--background-color);
   border-radius: 50px;
   cursor: pointer;
@@ -574,6 +573,10 @@ body {
   color: var(--background-color);
 }
 
+.card ul a:hover {
+  background-color: var(--background-color);
+  color: #0f0909;
+}
 /* ----------------- */
 
 .responsive {
@@ -757,9 +760,6 @@ footer {
 
   /*-------------------Portafolio-------------------*/
 
-  .titulo {
-    width: 90%;
-  }
 
   .titulo h2 {
     display: flex;
@@ -778,7 +778,7 @@ footer {
     justify-content: flex-start;
     font-size: 11px;
     width: 80%;
-    height: 185px;
+    height: 210px;
   }
 
   .picture {
@@ -805,7 +805,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 1100px;
+    height: 1400px;
     padding: 0px 30px;
   }
 

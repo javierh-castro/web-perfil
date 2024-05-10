@@ -1,22 +1,21 @@
-import "./NavComponent.css";
-import React, { useState } from "react";
+// import "./NavComponent.css";
+// import React, { useState, useEffect } from "react";
 
-function NavComponent() {
-  const [navToggle, setNavToggle] = useState(false);
+// function NavComponent() {
+//   const handleToggle = () => {
+//     const navMenu = document.querySelector(".nav");
+//     navMenu.classList.toggle("nav-menu_visible");
+//   };
 
-  const handleToggle = () => {
-    setNavToggle((prevToggle) => !prevToggle);
-  };
+//   return (
+//     <button
+//       className="nav-toggle"
+//       aria-label="Abrir menú"
+//       onClick={handleToggle}
+//     >
+//       <i className="bi bi-list"></i>
+//     </button>
+//   );
+// }
 
-  return (
-    <button
-    className={`nav-toggle ${navToggle ? "active" : ""}`}
-    aria-label={navToggle ? "Cerrar menú" : "Abrir menú"}
-    onClick={handleToggle}
-  >
-    <i className="bi bi-list"></i>
-  </button>
-  );
-}
-
-export default NavComponent;
+// export default NavComponent;

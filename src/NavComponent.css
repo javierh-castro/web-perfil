@@ -3,15 +3,8 @@
   .nav {
     /*position: relative;  Añade esta línea */
     padding: 10px 15px;
-    height: 60px;
+    height: 55px;
   }
-
-  /* .nav-toggle {
-    position: absolute; 
-    left: 15px; 
-    top: 50%; 
-    transform: translateY(-50%); 
-  } */
 
   .contact-button {
     padding: 5px 10px;
@@ -20,10 +13,10 @@
 
   .nav-links {
     flex-direction: column;
-    background: #262d35;
+    background: var(--bg-color);
     align-items: center;
     position: fixed;
-    /* right: 0; */
+    right: 0;
     top: 80px;
     width: 100%;
     padding: 20px 0px;
@@ -41,11 +34,12 @@
 
   .nav-links li a:hover,
   .nav-link-active {
-    background: none;
-    color: #83c5f7;
+    background: var(--background-color);
+    color: var(--bg-color);
   }
 
   .nav-toggle {
+    color: var(--color-primary);
     display: block;
   }
 
@@ -67,7 +61,7 @@
   }
 
   .nav.active .nav-links li a:hover {
-    background: none;
-    color: #83c5f7;
+    background: var(--background-color);
+    color: var(--bg-color);
   }
 }
