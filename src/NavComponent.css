@@ -3,7 +3,7 @@
   .nav {
     /*position: relative;  Añade esta línea */
     padding: 10px 15px;
-    height: 55px;
+    height: 50px;
   }
 
   .contact-button {
@@ -17,11 +17,11 @@
     align-items: center;
     position: fixed;
     right: 0;
-    top: 80px;
+    top: 65px;
     width: 100%;
     padding: 20px 0px;
 
-    height: calc(100% - 60px);
+    height: calc(100% - 50px);
     overflow-y: auto;
 
     right: 100%;
@@ -34,7 +34,7 @@
 
   .nav-links li a:hover,
   .nav-link-active {
-    background: var(--background-color);
+    /* background: var(--background-color); */
     color: var(--bg-color);
   }
 

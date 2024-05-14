@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
 :root {
   --color-primary: #090a0f;
@@ -358,22 +361,15 @@ body {
     transform: translate3d(16vw, 31vh, 36px);
   }
 }
-/* img {
-  mask-image: linear-gradient(black 80%, transparent);
-} */
 
 .titulo {
-  /* background-color: #0b7dda; */
-  display: grid;
-  place-items: center;
+  margin-top: 50px;
   height: 30%;
   padding: 11%;
 }
 
 .titulo h1 {
   font-size: 45px;
-  /* font-family: "Oxygen", sans-serif; */
-  /* font-size: 32px; */
 }
 
 /*-----Escritura-automatica----------*/
@@ -478,10 +474,11 @@ body {
   animation: parpadear 7.5s infinite backwards steps(4);
 }
 
-.cv {
+
+/* .cv {
   text-decoration: none;
   animation: parpadear 5.5s infinite backwards steps(2);
-}
+} */
 
 @keyframes parpadear {
   to {
@@ -577,6 +574,7 @@ body {
   background-color: var(--background-color);
   color: #0f0909;
 }
+
 /* ----------------- */
 
 .responsive {
@@ -594,7 +592,7 @@ body {
 }
 
 .format {
-  margin-top: 65px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -761,10 +759,18 @@ footer {
   /*-------------------Portafolio-------------------*/
 
 
-  .titulo h2 {
+ 
+  .titulo {
+    margin-top: 100px;
+  }
+
+  .titulo h1{
+    font-size: 40px;
+  }
+
+  .titulo h3{
     display: flex;
-    justify-content: center;
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .projects {
@@ -772,6 +778,7 @@ footer {
     gap: 10px;
     display: grid;
     place-items: center;
+    height: 1600px;
   }
 
   .card {
@@ -802,23 +809,26 @@ footer {
   }
 
   .skills {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 1400px;
+    margin-top: 600px;
+    height: 750px;
     padding: 0px 30px;
   }
 
+  .format{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  }
+
+
   .skills-text {
-    justify-content: center;
-    margin-top: 200px;
+    padding: 0px 10%;
     font-size: 14px;
-    width: 80%;
+    width: 90%;
   }
 
   .habilidades {
-    margin-top: 80px;
-    height: 60%;
+    margin-top: 60px;
     width: 90%;
   }
   .skills-list li {
@@ -833,6 +843,7 @@ footer {
   /*-------------------contact-------------------*/
 
   .contact {
+    margin-top: 60px;
     height: 700px;
   }
 
