@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 
 :root {
   --color-primary: #090a0f;
@@ -10,6 +7,10 @@
   --main-color: #f77f00;
   --background-color: #f77f00;
   --background2-color: rgba(255, 216, 107, 0.479);
+
+  --github-background: #6c757d;
+  --linkedin-background: #2374c4;
+  --cv-background: #23c483;
 }
 
 * {
@@ -32,6 +33,10 @@ html {
   --background2-color: rgba(255, 255, 255, 0.1);
   --bg-color: #090a0f;
   color: #f1ebeb;
+
+  --github-background: none;
+  --linkedin-background: none;
+  --cv-background: none;
 }
 
 body {
@@ -215,6 +220,7 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  /* z-index: 1; */
 }
 
 /* .nav.active li a:hover {
@@ -246,6 +252,9 @@ body {
   /* url(./public/img/montana.jpg) no-repeat center center fixed; */
   background-size: cover;
   background-attachment: scroll;
+}
+
+.home.active {
   z-index: -3;
 }
 
@@ -386,8 +395,9 @@ body {
   place-items: center;
   margin-top: 60px;
   height: 35%;
-  width: 500px;
+  width: 60%;
   margin: 0px 20px;
+  /* border: 2px solid red; */
 }
 
 .titulo h1 {
@@ -435,7 +445,7 @@ body {
   }
   41%,
   60% {
-    content: "UI / UX Designer";
+    content: "UI Designer";
   }
   61%,
   80% {
@@ -482,33 +492,87 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 0 8px var(--background-color), 0 0 25px var(--background-color),
-    0 0 40px #f3f3f39d;
+  /* text-shadow: 0 0 8px var(--background-color), 0 0 25px var(--background-color),
+    0 0 40px #f3f3f39d; */
 }
 
 .links-perfil a {
-  font-size: 23px;
-  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+}
+.github {
+  padding: 0px 5px;
+  padding-top: 4px;
+  border-radius: 3px;
+  font-weight: 100;
+  background-color: var(--github-background);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
-.github {
-  animation: parpadear 5s infinite backwards steps(3);
+.github:hover {
+  background-color: #6c757d;
+  box-shadow: 0px 15px 20px rgba(248, 249, 250, 0.455);
+  transform: translateY(-7px);
+}
+
+.github:active {
+  transform: translateY(-1px);
 }
 
 .linkedin {
-  animation: parpadear 7.5s infinite backwards steps(4);
+  background-color: var(--linkedin-background);
+  padding: 0px 6px;
+  padding-top: 3px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
-/* .cv {
-  text-decoration: none;
-  animation: parpadear 5.5s infinite backwards steps(2);
-} */
+.linkedin:hover {
+  background-color: #2374c4;
+  box-shadow: 0px 15px 20px rgba(46, 153, 229, 0.4);
+  transform: translateY(-7px);
+}
 
-@keyframes parpadear {
-  to {
-    color: gray;
-    text-shadow: none;
-  }
+.linkedin:active {
+  transform: translateY(-1px);
+}
+
+.cv {
+  background-color: var(--cv-background);
+  padding: 4px 7px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.cv a{
+  font-size: 18px;
+}
+
+.cv:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transform: translateY(-7px);
+}
+
+.cv:active {
+  transform: translateY(-1px);
 }
 
 #projects {
@@ -545,11 +609,6 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   background-color: var(--background2-color);
-  /* background: linear-gradient(
-    120deg,
-    rgba(246, 131, 8, 0.1),
-    rgba(255, 255, 255, 0.131)
-  ); */
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(24, 24, 24, 0.18);
@@ -571,7 +630,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* max-width: 300px; */
 }
 
 .description {
@@ -607,11 +665,9 @@ body {
 
 .skills {
   height: 100vh;
-  /* padding-top: 60px; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
   padding: 0px 15%;
 }
 
@@ -774,7 +830,7 @@ footer {
 @media (max-width: 760px) {
   /*-------------------Home-------------------*/
   .home {
-    padding: 0px 5%;
+    z-index: -3;
   }
 
   /*-------------------Portafolio-------------------*/
@@ -795,6 +851,10 @@ footer {
   .titulo h3 {
     display: flex;
     font-size: 26px;
+  }
+
+  .titulo p{
+    align-items: center;
   }
 
   .projects {
