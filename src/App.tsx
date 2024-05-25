@@ -147,10 +147,7 @@ function App() {
             </p>
             <div className="links-perfil">
               <p className="github">
-                <a
-                  href="https://github.com/javierh-castro"
-                  target="_blank"
-                >
+                <a href="https://github.com/javierh-castro" target="_blank">
                   <svg
                     viewBox="0 0 496 512"
                     height="1em"
@@ -173,7 +170,14 @@ function App() {
                   </svg>{" "}
                 </a>
               </p>
-              <p className="cv"><a href="https://docs.google.com/document/d/1teIMery5jQU2oLm9xv59Ly5G0Phe0HHErQqQmOmBs14/edit" target="_blank">cv</a></p>
+              <p className="cv">
+                <a
+                  href="https://docs.google.com/document/d/1teIMery5jQU2oLm9xv59Ly5G0Phe0HHErQqQmOmBs14/edit"
+                  target="_blank"
+                >
+                  cv
+                </a>
+              </p>
             </div>
           </div>
           {/* <NavComponent/> */}
@@ -222,11 +226,15 @@ function App() {
                 <img src="img/commerce.png" alt="proyecto crud" />
                 <ul>
                   <a
-                    href="https://github.com/javierh-castro/mi_pagina_web"
+                    href="https://github.com/javierh-castro/proyect-ecommerce/tree/master"
                     target="_blank"
                     className="bi bi-github"
                   ></a>
-                  <a href="" target="_blank" className="bi bi-link">
+                  <a
+                    href="https://ecommerce-javier.netlify.app/"
+                    target="_blank"
+                    className="bi bi-link"
+                  >
                     {" "}
                   </a>
                 </ul>
@@ -433,8 +441,7 @@ function App() {
             <form
               className="contact-form"
               name="contact"
-              data-netlify="true"
-              method="post"
+              data-netlify='true'
             >
               <p className="input-field">
                 <label htmlFor="name">Nombre:</label>
@@ -476,7 +483,7 @@ function App() {
               <p>Mendoza, Argentina</p>
               <br />
               <h4>EMAIL:</h4>
-              <p>javi2cc1@gmail.com</p>
+              <p>javiercastrohernan@gmail.com</p>
               <br />
               <p>
                 Puedes contactarme enviando un mail o a través de mis redes
