@@ -25,7 +25,6 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
 
     fetch("/", {
       method: "POST",
