@@ -666,7 +666,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 15%;
+  padding: 0px 10%;
 }
 
 .format {
@@ -675,18 +675,30 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 2px solid red; */
   gap: 20px;
 }
 
 .skills-text {
-  font-size: 14px;
-  width: 30%;
-  padding: 0px 20px;
+  margin-top: 15px;
+  font-size: 15px;
+  width:30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 10px;
 }
+
+.text-separation{
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 1015px) {
+  .skills-text {
+    width:55%;
+  }
+}
+
 
 .habilidades {
   display: flex;
