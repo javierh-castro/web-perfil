@@ -1,39 +1,5 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
-const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
-  };
+function ContactForm(){
 
   return (
     <section id="contact" className="contact">
@@ -43,9 +9,7 @@ const ContactForm: React.FC = () => {
           className="contact-form"
           name="contactform"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          method="POST"
-          onSubmit={handleSubmit}
+          method="post"
         >
           <p className="input-field">
             <label htmlFor="name">Nombre:</label>
@@ -54,7 +18,6 @@ const ContactForm: React.FC = () => {
               id="name"
               name="name"
               placeholder="Ingrese tu nombre"
-              onChange={handleChange}
               required
             />
           </p>
@@ -65,7 +28,6 @@ const ContactForm: React.FC = () => {
               id="email"
               name="email"
               placeholder="Ingrese tu email"
-              onChange={handleChange}
               required
             />
           </p>
@@ -75,7 +37,6 @@ const ContactForm: React.FC = () => {
               id="message"
               name="message"
               placeholder="Ingrese tu mensaje"
-              onChange={handleChange}
               required
             ></textarea>
           </p>
