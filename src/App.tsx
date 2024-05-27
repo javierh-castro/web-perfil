@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm";
 
 function App() {
   const [dark, setDark] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,12 +39,14 @@ function App() {
       document.body.classList.remove("dark-mode");
     }
   }, [dark]);
-
-  //Hola
-  const [menuVisible, setMenuVisible] = useState(false);
-
+  
+  //Control de menu responsive
   const handleToggle = () => {
     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+  };
+
+  const handleMenuItemClick = () => {
+    setMenuVisible(false); // Cierra el menú al hacer clic en un elemento de navegación
   };
 
   return (
@@ -81,27 +84,27 @@ function App() {
             <li className="img">
               <img
                 className="imagen-perfil"
-                src="img/j2.png"
+                src="img/javierperfil.png"
                 alt="logo de marca"
               />
             </li>
             <li>
-              <a className="nav-link" href="#home">
+              <a className="nav-link" href="#home" onClick={handleMenuItemClick}>
                 Home
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#projects">
+              <a className="nav-link" href="#projects" onClick={handleMenuItemClick}>
                 Portafolio
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#skills">
+              <a className="nav-link" href="#skills" onClick={handleMenuItemClick}>
                 Habilidades
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#contact">
+              <a className="nav-link" href="#contact" onClick={handleMenuItemClick}>
                 Contacto
               </a>
             </li>
@@ -114,18 +117,18 @@ function App() {
                 onClick={darkMode}
               />
               <div className="toggle-slot">
-                <div className="sun-icon-wrapper">
-                  <div
-                    className="iconify sun-icon"
-                    data-icon="feather-sun"
-                    data-inline="false"
-                  ></div>
-                </div>
                 <div className="toggle-button"></div>
                 <div className="moon-icon-wrapper">
                   <div
                     className="iconify moon-icon"
                     data-icon="feather-moon"
+                    data-inline="false"
+                  ></div>
+                </div>
+                <div className="sun-icon-wrapper">
+                  <div
+                    className="iconify sun-icon"
+                    data-icon="feather-sun"
                     data-inline="false"
                   ></div>
                 </div>
@@ -142,9 +145,8 @@ function App() {
               Yo soy <span></span>
             </h3>
             <p>
-              Explora mi colección de proyectos destacados, competencias
-              adquiridas y logros importantes que reflejan mi compromiso y
-              pasión por mi profesión.
+              Explora mis proyectos destacados, competencias adquiridas y logros
+              importantes que reflejan mi compromiso y pasión por mi profesión.
             </p>
             <div className="links-perfil">
               <p className="github">
@@ -435,7 +437,7 @@ function App() {
             </article>
           </div>
         </section>
-        <ContactForm/>
+        <ContactForm />
         <footer>
           <p>&copy; Web desarrollada por Javier Castro</p>
         </footer>

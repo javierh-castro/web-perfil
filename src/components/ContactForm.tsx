@@ -1,5 +1,11 @@
+// Make sure to run npm install @formspree/react
+import { useForm, ValidationError } from "@formspree/react";
 
-function ContactForm(){
+function ContactForm() {
+  const [state, handleSubmit] = useForm("mjvndlno");
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+  }
 
   return (
     <section id="contact" className="contact">
@@ -8,8 +14,7 @@ function ContactForm(){
         <form
           className="contact-form"
           name="contactform"
-          data-netlify="true"
-          method="post"
+          onSubmit={handleSubmit}
         >
           <p className="input-field">
             <label htmlFor="name">Nombre:</label>
@@ -30,6 +35,11 @@ function ContactForm(){
               placeholder="Ingrese tu email"
               required
             />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </p>
           <p className="input-field">
             <label htmlFor="message">Mensaje:</label>
@@ -38,10 +48,19 @@ function ContactForm(){
               name="message"
               placeholder="Ingrese tu mensaje"
               required
-            ></textarea>
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </p>
           <p>
-            <button className="button-form" type="submit">
+            <button
+              className="button-form"
+              type="submit"
+              disabled={state.submitting}
+            >
               Enviar
             </button>
           </p>
@@ -81,6 +100,6 @@ function ContactForm(){
       </div>
     </section>
   );
-};
+}
 
 export default ContactForm;
