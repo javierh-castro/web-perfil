@@ -39,7 +39,7 @@ function App() {
       document.body.classList.remove("dark-mode");
     }
   }, [dark]);
-  
+
   //Control de menu responsive
   const handleToggle = () => {
     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
@@ -89,22 +89,38 @@ function App() {
               />
             </li>
             <li>
-              <a className="nav-link" href="#home" onClick={handleMenuItemClick}>
+              <a
+                className="nav-link"
+                href="#home"
+                onClick={handleMenuItemClick}
+              >
                 Home
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#projects" onClick={handleMenuItemClick}>
+              <a
+                className="nav-link"
+                href="#projects"
+                onClick={handleMenuItemClick}
+              >
                 Portafolio
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#skills" onClick={handleMenuItemClick}>
+              <a
+                className="nav-link"
+                href="#skills"
+                onClick={handleMenuItemClick}
+              >
                 Habilidades
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#contact" onClick={handleMenuItemClick}>
+              <a
+                className="nav-link"
+                href="#contact"
+                onClick={handleMenuItemClick}
+              >
                 Contacto
               </a>
             </li>
@@ -149,8 +165,12 @@ function App() {
               importantes que reflejan mi compromiso y pasión por mi profesión.
             </p>
             <div className="links-perfil">
-              <p className="github">
-                <a href="https://github.com/javierh-castro" target="_blank">
+              <p>
+                <a
+                  className="github"
+                  href="https://github.com/javierh-castro"
+                  target="_blank"
+                >
                   <svg
                     viewBox="0 0 496 512"
                     height="1em"
@@ -161,8 +181,12 @@ function App() {
                   </svg>{" "}
                 </a>
               </p>
-              <p className="linkedin">
-                <a href="https://www.linkedin.com/in/javierhcc" target="_blank">
+              <p>
+                <a
+                  className="linkedin"
+                  href="https://www.linkedin.com/in/javierhcc"
+                  target="_blank"
+                >
                   <svg
                     fill="#fff"
                     viewBox="0 0 448 512"
@@ -173,8 +197,9 @@ function App() {
                   </svg>{" "}
                 </a>
               </p>
-              <p className="cv">
+              <p>
                 <a
+                  className="cv"
                   href="https://docs.google.com/document/d/1teIMery5jQU2oLm9xv59Ly5G0Phe0HHErQqQmOmBs14/edit"
                   target="_blank"
                 >
